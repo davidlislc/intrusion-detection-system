@@ -1,0 +1,23 @@
+camera:
+  source: 0  # 0 for default camera, or rtsp://url for IP camera
+  resolution:
+    width: 1280
+    height: 720
+  fps: 30
+
+detection:
+  model_path: "yolo11n.pt"
+  confidence_threshold: 0.5
+  track_history: 30
+
+zones:
+  intrusion_zone:
+    # Define polygon points for intrusion zone
+    points: [[100, 100], [500, 100], [500, 400], [100, 400]]
+    color: [255, 0, 0]  # Red
+    thickness: 2
+
+alerts:
+  enabled: true
+  cooldown_seconds: 5
+  voice_alerts: true
